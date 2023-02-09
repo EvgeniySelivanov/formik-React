@@ -1,0 +1,48 @@
+@use "src/common/styles/color" as color;
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  min-width: 15.62%;
+  max-width: 26.04%;
+  input[type="submit"] {
+    min-height: 40px;
+    background-color: color.$btn-bg-color;
+    color: color.$txt-btn-color;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    min-width: 100%;
+
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.7em;
+  position: relative;
+  & > input {
+    border:2px solid white;
+    padding-left: 0.75em;
+    min-height: 40px;
+    outline: none;
+    border-radius: 5px;
+    
+  }
+  & > span {
+    text-align: center;
+    max-height: inherit;
+    width: 62%;
+    position: absolute;
+    top:10%;
+    left: 101%;
+    z-index: 3;
+    padding: 0.5em;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(228, 116, 116);
+    color: color.$txt-btn-color;
+  }
+}

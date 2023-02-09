@@ -1,0 +1,19 @@
+.header{
+  padding: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  .link{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: medium;
+    font-weight: 700;
+  }
+  button{
+    min-width: 100px;
+    background-color: rgb(240, 248, 255,0);
+    border:aliceblue 2px solid ;
+    border-radius: 5px;
+  }
+}
