@@ -1,0 +1,100 @@
+@use "src/common/styles/color" as color;
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  // align-content: center;
+  min-width: 15.62%;
+  max-width: 26.04%;
+  input[type="submit"] {
+    min-height: 40px;
+    background-color: color.$btn-bg-color;
+    color: color.$txt-btn-color;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    min-width: 100%;
+  }
+}
+.label,
+.labelRevers {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.7em;
+  position: relative;
+  min-width: 45%;
+
+  & > input {
+    border: 2px solid white;
+    padding-left: 0.75em;
+    min-height: 40px;
+    min-width: 70%;
+    outline: none;
+    border-radius: 5px;
+  }
+  & > span {
+    text-align: center;
+    max-height: inherit;
+    width: 100%;
+    position: absolute;
+    top: 10%;
+
+    z-index: 3;
+    padding: 0.5em;
+    border: 2px solid red;
+    border-radius: 5px;
+    background-color: rgb(228, 116, 116);
+    color: color.$txt-btn-color;
+  }
+  & > span::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 19px;
+    border-style: solid;
+    top: -2px;
+  }
+}
+.label {
+  & > span {
+    left: 110%;
+  }
+  & > span::after {
+    border-color: transparent red transparent transparent;
+    left: -37px;
+  }
+}
+.labelRevers {
+  & > span {
+    right: 110%;
+  }
+  & > span::after {
+    border-color: transparent transparent transparent red;
+    right: -37px;
+  }
+}
+.radioBox{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.singleRadioBtn{
+  display: flex;
+  flex-direction: row;
+  border: 1px color.$txt-btn-color solid;
+  padding: 5px;
+  margin-bottom: 10px;
+
+  h3,p{
+    margin: 0 0 5px 5px;
+    color:color.$txt-btn-color ;
+    text-align: start;
+  }
+  p{
+    font-size: small;
+  }
+
+}
+

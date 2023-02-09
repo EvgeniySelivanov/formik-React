@@ -3,7 +3,7 @@ import { Field, ErrorMessage } from 'formik';
 import cx from 'classnames';
 import styles from './InputWrapper.module.scss';
 const InputWrapper = (props) => {
-  const { name,className, ...rest } = props;
+  const { name, className, ...rest } = props;
   return (
     <label className={className}>
       <Field name={name} >
