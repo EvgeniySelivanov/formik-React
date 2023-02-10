@@ -35,14 +35,14 @@ export const EMAIL_SCHEMA = Yup
   .email()
   .required('Required');
 
-export const RADIO_SCHEMA=Yup.string().required("A radio option is required");
+export const RADIO_SCHEMA=Yup.string().oneOf(["buyer","creative"]).required("A radio option is required!!!");
 
 
 
 
 export const SIGN_IN_SCHEMA = Yup.object(
   {
-    login: LOG_IN_SCHEMA,
+    login: EMAIL_SCHEMA,
     password: PASS_SCHEMA
   }
 );
@@ -55,10 +55,11 @@ export const SIGN_UP_SCHEMA = Yup.object(
     email: EMAIL_SCHEMA,
     password: PASS_SCHEMA,
     passwordConfirm: PASS_CONFIRM_SCHEMA,
-    radio:RADIO_SCHEMA
+    role:RADIO_SCHEMA
   }
 )
 
 //gr3at@3wdsG
 
 
+//role:

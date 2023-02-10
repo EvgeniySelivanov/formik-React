@@ -4,7 +4,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  min-width: 15.62%;
+  min-width: 25.62%;
   max-width: 26.04%;
   input[type="submit"] {
     min-height: 40px;
@@ -37,12 +37,39 @@
     width: 62%;
     position: absolute;
     top:10%;
-    left: 101%;
+    left: 110%;
     z-index: 3;
     padding: 0.5em;
     border: 2px solid red;
     border-radius: 5px;
     background-color: rgb(228, 116, 116);
     color: color.$txt-btn-color;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-width: 19px;
+      border-style: solid;
+      top: -2px;
+      border-color: transparent red transparent transparent;
+      left: -37px;
+    }
   }
+
+}
+@media screen and (max-width:574px){
+.label{
+  & > span {
+    height:inherit;
+    top:20%;
+    left: 48%;
+    font-size: smaller;
+    &::after{
+      border-width: 16px;
+      left: -31px;
+
+    }
+  }
+}
 }

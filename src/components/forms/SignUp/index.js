@@ -1,8 +1,11 @@
 import React from 'react';
-import { Form, Formik } from 'formik';
+import { Form, Formik, Field } from 'formik';
 import InputWrapper from '../InputWrapper/index';
 import styles from './SignUp.module.scss';
 import { SIGN_UP_SCHEMA } from '../../../utils/validationSCHEMAS';
+import RadioBlockWrapper from '../RadioBlockWrapper/index';
+import textRadioLabel from './textRadioLabel.json'
+
 const initialValues = {
 
   firstName: '',
@@ -10,10 +13,12 @@ const initialValues = {
   displayName: '',
   email: '',
   password: '',
-  passwordConfirm: ''
+  passwordConfirm: '',
+  role:''
 
 }
 const SignUp = () => {
+  
   const onSubmit = (values, formikBag) => {
     console.group();
     console.log(values);
@@ -32,25 +37,10 @@ const SignUp = () => {
             <InputWrapper name='email' type='email' placeholder='Email Address' className={styles.label} />
             <InputWrapper name='password' type='password' placeholder='Password' className={styles.labelRevers} />
             <InputWrapper name='passwordConfirm' type='password' placeholder='Password Confirmation' className={styles.label} />
-            <div className={styles.radioBox}>
-              <div className={styles.singleRadioBtn}>
-                <InputWrapper name='radio' type='radio' value='buyer' />
-                <div>
-                  <h3>Join As a Buyer</h3>
-                  <p>I am looking for a Name, Logo or Tagline for my business, brand or product.</p>
-                </div>
-              </div>
-              <div className={styles.singleRadioBtn}>
-                <InputWrapper name='radio' type='radio' value='marketplace' />
-                <div>
-                  <h3>Join As a Creative or Marketplace Seller</h3>
-                  <p>I plan to submit name ideas, Logo designs or sell names in Domain Marketplace.</p>
-                </div>
-              </div>
-            </div>
+          
+            <RadioBlockWrapper name="role" textRadioLabel={textRadioLabel}  type="radio"/>
 
-
-            <input type='submit' value='Create account' />
+            <Field type='submit' value='Create account' />
           </Form>
         )
       }}

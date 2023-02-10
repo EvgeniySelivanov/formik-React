@@ -22,8 +22,8 @@ const SignIn = () => {
         // console.log(formikProps);
         return (
           <Form className={styles.form}>
-            <InputWrapper  name='login' type='text' placeholder='your login' className={styles.label} />
-            <InputWrapper name='password' type='password' placeholder='your password' className={styles.label} />
+            <InputWrapper  name='login' type='text' placeholder='Email address' className={styles.label} />
+            <InputWrapper name='password' type='password' placeholder='Password' className={styles.label} />
             <input type='submit' value='LOGIN' />
           </Form>
         )
